@@ -1,0 +1,84 @@
+    
+\documentclass[11pt]{article}
+\usepackage{times}
+    \usepackage{fullpage}
+    
+    \title{Hybrid Localization with video based positioning technology}
+    \author{Tan De Hui Adrian - 2427239T}
+
+    \begin{document}
+    \maketitle
+    
+    
+     
+
+\section{Status report}
+
+\subsection{Proposal}\label{proposal}
+
+\subsubsection{Motivation}\label{motivation}
+
+Nowadays, location-based services (LBS) have become an important part of people's daily lives. Users are making use of such services to assist them in many different aspects such as navigation, marketing, entertainment and location-based information retrieval. All this services has been developed with Global positioning system. However, GPS does not work well in indoor environment due to poor signal reception in indoor situations such as buildings or tunnels etc and it is not possible to guarantee the availability of navigational satellites systems. Hence, many different technologies have been studied extensively for indoor environment applications. Some of the technologies studied are Wi-Fi, Bluetooth, Ultra Wide Band (UWB), Radio Frequency Identification (RFID) and inertial measurement unit. \\
+
+The most commonly implemented technologies are Wi-Fi and Bluetooth due to the wide availability of wireless access points and Bluetooth Low Energy (BLE) beacons installed in indoor enviroments. However, with such technologies, it requires high costs due to the need to install additional infastructure and also such conventional radio frequency methods depends on the angle of Arrival (AoA), time of Arrival (ToA) as well as Received Signal Strength Indicator (RSSI). These methods heavily depends on the stability of RSSI as well as the availability of the line of sight between the transmitter and receiver devices. \\
+
+Another approach to Indoor Positioning System (IPS) is the use of smartphone embedded sensors, such as accelerometer, gyroscope and magnetometer. These, paired together with pedestrian dead reckoning positioning algorithm requires no additional installation of infrastructure and results in a low cost. Even though there are cumulative drift errors that the IMU sensors brings about, there are ways to handle and reduce the drift error.
+
+\subsubsection{Aims}\label{aims}
+
+The aim of this project is to integrate the use of smartphone embedded IMU sensors data from accelerometer, gyroscope and magnetometer to estimate the current position of a user within indoor environments without the use of GPS signals and in order to counter the drift error, Quick Response (QR) code is introduced to handle it.\\
+
+QR Code will be encoded with the coordinates within the position it is at in the indoor environment, using the smartphone camera to detect the QR Code and then recalibrating the position of the individual in the indoor environment using the coordinates encoded within the QR Code.
+\subsection{Progress}\label{progress}
+Below are the progress made so far.
+\begin{itemize}
+  \item Prototype application done on Android device, Huawei P20 Pro.
+  \item Indoor map of SIT@NYP levels 2,3 and 4 drawn using floorplancreator demo version.
+  \item Using smartphone camera to read the QR codes using the ZXing library.
+  \item Encoded QR codes with values that indicates which level the user is at and the starting coordinates.
+  \item One QR code is also created to simulate the repositioning of the user's path as the sensor may causes a drift in the path.
+  \item Able to track user position by using the accelerometer and magnetometer values to calculate azimuth to determine the orientation; the direction that the user is walking.
+  \item User is also able to key in a stride length value as well as change the indoor map reflected as they change levels by navigating to the settings page to re-scan the inital level's QR Code.
+\end{itemize}
+
+\subsection{Problems and risks}\label{problems-and-risks}
+
+\subsubsection{Problems}\label{problems}
+
+One of the problems I have faced initially is the complex mathematics equations involved in deriving a user's current position within an indoor environment using the smartphone's embedded sensors such as accelerometer, gyroscope and magnetometer. All these sensors have their own parts to play in calculating as accurate as possible the position of the user.\\
+
+Another problem that I have faced is also that the sensors within the smartphone suffers from drift errors after sometime. This will require certain mitigations in order to preserve the accuracy of the user's position which can be done so with the QR Code. In order to determine the drift error and perform the mitigation, I plan to carry out experiments to see the effects of the drift in the sensor values to determine the most appropriate distance between each repositioning QR code to make it more efficient.
+
+\subsubsection{Risks}\label{risks}
+
+One risk that I have identified is the accuracy of the estimation of positioning due to the IMU sensor data. As every phone has different embedded sensors, the data from each sensors may vary very differently. And because the sensors are very sensitive, the change in the data may vary as well. This will lead to inconsistent results in the appication.\\
+ 
+To test out this risk, a way is to deploy the application on multiple different devices and to test out the accuracy of each model and document it. For the varying data, it is best to conduct an experiment, collecting multiple data from various smartphone and performing the same set of actions to each smartphone such as - rotation to left or right etc.
+
+\subsection{Plan}\label{plan}
+
+Calculating from 15th of December 2019 to 27th of March 2020, there is a total of 14 weeks. Below is the timeline of the plan in weeks,
+
+\begin{itemize}
+  \item Week 1: Finish writing the status report. Write design portion of the final dissertation
+  \item Week 2: Conduct experiments on the application. Document down the results of each experiments into the dissertation.
+  \item Week 3: Conduct experiments on the application. Document down the results of each experiments into the dissertation.
+  \item Week 4: Explore the appropriate distance between each repositioning QR code. Carry out experiments and document in dissertation.
+  \item Week 5: Explore the appropriate distance between each repositioning QR code. Carry out experiments and document in dissertation.
+  \item Week 6: Explore Kalman Filter.
+  \item Week 7: Explore Kalman Filter and implement Kalman filter if necessary. Document into the equations in the dissertation.
+  \item Week 8: Explore the weakness in the application.
+  \item Week 9: Work on improving on the weaknesses in the application. Implement solution and document in dissertation.
+  \item Week 10: Finish up final dissertation.
+  \item Week 11: Finish up final dissertation.
+  \item Week 12: Finish up final dissertation.
+  \item Week 13: Finish up final dissertation and submitting.
+  \item Week 14: Prepare presentation slides.
+\end{itemize}
+
+
+
+
+    
+    
+    \end{document}

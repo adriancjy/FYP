@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <!--   <TextView
+        android:id="@+id/gyroText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="45dp"
+        android:text="TextView"
+        android:layout_alignRight="@id/gyroWord"
+
+        />
+
+    <TextView
+        android:id="@+id/magText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="5dp"
+        android:text="TextView"
+        android:layout_alignRight="@id/magWord"--><![CDATA[
+
+        />
+
+
+
+
+
+
+
+    ]]>
+
+    <TextView
+        android:id="@+id/accText"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/accWord"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/accWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="66dp"
+        android:text="Accelerometer" />
+
+    <!--<TextView
+        android:id="@+id/gyroWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginLeft="41dp"
+        android:text="Gyroscope"
+        android:layout_below="@+id/accWord"
+        />
+
+    <TextView
+        android:id="@+id/magWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="56dp"
+        android:text="Magnetometer"
+        android:layout_below="@+id/gyroWord"/>-->
+
+</RelativeLayout>
