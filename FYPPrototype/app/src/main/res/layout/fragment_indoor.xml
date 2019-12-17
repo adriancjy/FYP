@@ -29,7 +29,9 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_below="@+id/sensorBtn"
-         >
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp">
 
 
     </RelativeLayout>

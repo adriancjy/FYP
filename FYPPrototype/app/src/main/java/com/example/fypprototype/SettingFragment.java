@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -29,7 +32,7 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
     private ZXingScannerView ScannerView;
     public static String qrVal;
     Bundle args = new Bundle();
-    float content = 0.0f;
+    float content = 0.0f, strideCalculate = 0.0f;
 
 
 
@@ -37,9 +40,12 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_settings, container, false);
-        final EditText strideLength = (EditText) v.findViewById(R.id.strideInput);
+        final EditText height = (EditText) v.findViewById(R.id.heightInput);
         final TextView tvX = (TextView) v.findViewById(R.id.tvX);
         final TextView tvY = (TextView) v.findViewById(R.id.tvY);
+        final RadioButton radioMale = (RadioButton) v.findViewById(R.id.rdbMale);
+        final RadioButton radioFemale = (RadioButton) v.findViewById(R.id.rdbFemale);
+        final RadioGroup rdG = (RadioGroup) v.findViewById(R.id.rdGroup);
         ScannerView = new ZXingScannerView(getActivity());
         RelativeLayout rl = (RelativeLayout) v.findViewById(R.id.startScan);
         rl.addView(ScannerView);
@@ -54,18 +60,24 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
         Button saveBtn = (Button) v.findViewById(R.id.saveBtn);
         saveBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(strideLength.getText().toString().isEmpty()){
-                    Toast.makeText(getActivity().getApplicationContext(), "Please key in your stride length value.", Toast.LENGTH_LONG).show();
+                if(rdG.getCheckedRadioButtonId() == -1){
+                    Toast.makeText(getActivity().getApplicationContext(), "Please select your gender", Toast.LENGTH_LONG).show();
+                }
+                else if(height.getText().toString().isEmpty()){
+                    Toast.makeText(getActivity().getApplicationContext(), "Please fill in your height", Toast.LENGTH_LONG).show();
                 }else{
                     if(args.containsKey("startX") && args.containsKey("startY")){
-                        content = Float.valueOf(strideLength.getText().toString());
+                        content = ((Float.valueOf(height.getText().toString()) * strideCalculate)/2.54f)-10;
                         args.putFloat("strideLength", content);
+                        BottomNavigationView bottomNav = getActivity().findViewById(R.id.bottomNavgiation);
+                        bottomNav.setSelectedItemId(R.id.nav_home);
                         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                         IndoorFragment fragment = new IndoorFragment();
                         fragment.setArguments(args);
                         fragmentTransaction.replace(R.id.fragment_container, fragment);
                         fragmentTransaction.commit();
+
                         Toast.makeText(getActivity().getApplicationContext(), "Successfully saved", Toast.LENGTH_LONG).show();
                     }
                     else{
@@ -75,6 +87,19 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
             }
         });
 
+        rdG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // checkedId is the RadioButton selected
+                RadioButton rb = (RadioButton)group.findViewById(checkedId);
+                if(rb.getText().equals("Male")){
+                    strideCalculate = 0.415f;
+                }else{
+                    strideCalculate = 0.413f;
+                }
+            }
+        });
         Button resetBtn = (Button) v.findViewById(R.id.resetBtn);
         resetBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -90,9 +115,16 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
                 if(args.containsKey("level")){
                     args.remove("level");
                 }
-                strideLength.setText("");
+                height.setText("");
                 tvX.setText("");
                 tvY.setText("");
+                if(rdG.getCheckedRadioButtonId() != -1){
+                    if(rdG.getCheckedRadioButtonId() == R.id.rdbMale){
+                        radioMale.setChecked(false);
+                    }else if(rdG.getCheckedRadioButtonId() == R.id.rdbFemale){
+                        radioFemale.setChecked(false);
+                    }
+                }
                 onResume();
 
 
@@ -142,4 +174,6 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
         ScannerView.setResultHandler(this);
         ScannerView.startCamera();
     }
+
+
 }

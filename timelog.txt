@@ -171,3 +171,10 @@
 * *1 hour* Continue writing design portion of the dissertation
 * *1 hour* Making final edits to the status report
 * *3 hours* Adding in a step detection algorithm and testing the step detection
+
+### 17 Dec 2019
+
+* *2 hours* Editing the code. Added the stride length estimation into the code.
+* *1 hour* Experiment with the application
+* *2 hours* Fix errors on the code as well as redraw level 3 and 4 indoor plan.
+* *2 hour* Edit final dissertation

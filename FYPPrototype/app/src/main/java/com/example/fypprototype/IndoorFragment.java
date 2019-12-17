@@ -83,7 +83,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_indoor, container, false);
 
-        Bundle bundle = getArguments();
+        Bundle bundle = this.getArguments();
         if(bundle != null){
             strideLength = bundle.getFloat("strideLength", strideLength);
             startX = bundle.getFloat("startX", startX);
@@ -102,7 +102,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         ScannerView.setSoundEffectsEnabled(true);
         ScannerView.setAutoFocus(true);
         //Hiding the relativelayout
-        rl.setVisibility(View.INVISIBLE);
+        //rl.setVisibility(View.INVISIBLE);
         ImageView floorplanView = (ImageView) v.findViewById(R.id.floorplanView);
         if(level.equals("")) {
             floorplanView.setImageResource(R.drawable.defaultbg);
@@ -124,7 +124,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
 
             @Override
             public void onGlobalLayout() {
-                bitmap = Bitmap.createBitmap(emptyView.getWidth(), emptyView.getHeight(), Bitmap.Config.ARGB_8888);
+                bitmap = Bitmap.createBitmap(1080, 1823, Bitmap.Config.ARGB_8888);
                 canvas = new Canvas(bitmap);
 
             }
@@ -176,7 +176,6 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     public void handleResult(Result result){
         qrVal = result.getText();
         drawLines(qrVal);
-        Toast.makeText(getActivity().getApplicationContext(), "You have been repositioned", Toast.LENGTH_LONG).show();
         onResume();
 
     }
@@ -196,7 +195,10 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
                 canvas.drawPath(mPath, paint);
                 startX = Float.parseFloat((indiQR[1]));
                 startY = Float.parseFloat((indiQR[2]));
+                Toast.makeText(getActivity().getApplicationContext(), "You have been repositioned", Toast.LENGTH_LONG).show();
             }
+        }else if(indiQR.length == 4){
+            Toast.makeText(getActivity().getApplicationContext(), "Invalid QR Code", Toast.LENGTH_LONG).show();
         }
         else{
             mPath.moveTo(Float.parseFloat(indiQR [0]), Float.parseFloat(indiQR [1]));
