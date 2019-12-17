@@ -1,26 +1,173 @@
 # Timelog
 
-* PROJECT NAME
-* YOUR NAME
-* STUDENT_ID
-* SUPERVISOR NAME
-
-## Guidance
-
-* This file contains the time log for your project. It will be submitted along with your final dissertation.
-* **YOU MUST KEEP THIS UP TO DATE AND UNDER VERSION CONTROL.**
-* This timelog should be filled out honestly, regularly (daily) and accurately. It is for *your* benefit.
-* Follow the structure provided, grouping time by weeks.  Quantise time to the half hour.
+* Hybrid Localization with video based positioning technology
+* Tan De Hui Adrian	
+* 2427239T
+* Prof Seow Chee Kiat
 
 ## Week 1
 
-### 19 Oct 2019
+### 23 Sept 2019
 
-* *4 hours* Read the project guidance notes
-* *0.5 hour* Created GitLab repository and cloned the cookiecutter for the projects
-* *1 hour* Modified dissertation template, compiled  
+* *3 hours* Meeting with project supervisor
+* *3 hour* Read up on relevant documents
+* *1 hour* Download and modified dissertation 
 
-## 20 Oct 2019
+### 24 Sept 2019
 
-* *1 hour* meeting with supervisor
-* *2 hours* writing initial version of test harness
+* *4 hour* Exploring different implementations related to the project
+* *2 hours* Writing the literature review for the project
+
+### 25 Sept 2019
+
+* *3 hours* Choosing one implementation to apply and exploring the different implementations
+* *1 hour* Looking at QR Code as a landmark for indoor localization
+
+### 26 Sept 2019
+
+* *3 hours* Reading on relevant IEEE papers
+
+# 27 Sept 2019
+* *5 hours* Installing Android Studio and testing a few different implementations to see which fits best.
+
+## Week 2
+
+### 1 Oct 2019
+
+* *4 hours* Continue to read up on relevant IEEE papers
+
+### 2 Oct 2019
+
+* *5 hours* A indepth look at Android sensors embedded in a smartphone using Android documentation
+
+### 4 Oct 2019
+
+* *4 hours* Writing literature review for the dissertation
+* *1 hour* Adding in the abstract and background for dissertation
+
+## Week 3
+
+### 7 Oct 2019
+
+* *5 hours* Continue various testing development on Android Studio
+
+### 8 Oct 2019
+
+* *4 hours* Working with Android API sensors in Android Studio using my personal smartphone, Huawei P20 Pro.
+
+### 9 Oct 2019
+
+* *3 hours* Testing out various Pedestrain Dead Reckoning algorithms on smartphone
+
+### 10 Oct 2019
+
+* *4 hours* Complete the first part of the application in Android Studio
+		- Using ZXing library to scan QR Code
+		- Drawn the indoor map of the building's level 4.
+
+## Week 4
+
+### 14 Oct 2019
+
+* *3 hours* Meeting with supervisor
+
+### 15 Oct 2019
+
+* *4 hours* Improved on the base existing application
+		- Have the ZXing library scan for QR code without being visible to the user.
+		- Once QR Code is scanned, the encoded X and Y values in the QR Code will be plotted on the indoor map.
+
+* *2 hours* Literature Review base is completed.
+
+### 17 Oct 2019
+
+* *2 hours* Improving on the Literature Review
+* *3 hours* Experimenting with the Android Sensor values.
+
+
+//From week 5 to week 11 lesser work was done as time was focused on assignment.
+
+## Week 5
+
+### 21 Oct 2019
+
+* *3 hours* Meeting with supervisor
+* *4 hours* Reading up on the information discussed during the meeting
+		- Particle filter
+		- Understanding the concept of the mathematics behind the inertial measurement unit/pedestrain dead reckoning
+* *2 hours* Adding in additional information for the Literature review
+
+### 23 Oct 2019
+
+* *3 hours* Meeting with supervisor to update
+
+## Week 6
+
+### 28 Oct 2019
+
+* *3 hours* Tested implementation of Google Maps and overlay image on the map.
+* *2 hours* Researched on the overlay and Google Maps implementation in conjunction with smartphone embedded sensors.
+
+## Week 7
+
+### 4 Nov 2019
+
+* *2 hours* Started on the status report
+* *2 hours* Continue to work with the Android Sensors API
+
+## Week 8
+
+### 11 Nov 2019
+
+* *2 hours* Discarded the Google Map idea and continued development on the initial design - indoor map with Android smartphone embedded sensors
+
+### 15 Nov 2019
+
+* *3 hours* Continue application development
+
+## Week 9
+
+### Nov Dec 2019
+
+* *4 hours* Read up on more IEEE papers
+
+## Week 10
+
+### 29 Nov 2019
+
+* *6 hours* Implemented the user tracking on the application using various Android API and sensors data to track orientation
+
+## Week 11
+
+### 2 Dec 2019
+
+* *4 hours* Made minor changes to the application such as the colors of the tracking line and the placement of stuff
+
+## Week 12
+
+### 9 Dec 2019
+
+* *2 hours* Added in extra setting page to allow user to input stride length as well as to scan initial QR code of each level
+* *1 hour* Encoded additional QR codes such as the initial QR codes as well as a repositioning QR code
+* *2 hours* Testing the application and correcting bugs
+
+### 11 Dec 2019
+
+* *2 hours* Cleaning up codes in the application
+* *2 hours* Writing the Design portion in the dissertation
+
+### 13 Dec 2019
+
+* *3 hours* Meeting with supervisor to update progress
+* *2 hours* Read up on information discussed in meeting
+		- Stride length estimation
+		- Areas to improve on the application
+
+## Week 13
+
+### 16 Dec 2019
+
+* *1 hour* Conducting accuracy experiments with the application
+* *1 hour* Continue writing design portion of the dissertation
+* *1 hour* Making final edits to the status report
+* *3 hours* Adding in a step detection algorithm and testing the step detection

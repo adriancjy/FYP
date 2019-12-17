@@ -22,323 +22,323 @@
 22
 23    <uses-sdk
 24        android:minSdkVersion="19"
-24-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml
+24-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml
 25        android:targetSdkVersion="22" />
-25-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml
+25-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml
 26
 27    <uses-permission android:name="android.permission.CAMERA" />
-27-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:23:3-62
-27-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:23:20-60
+27-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:23:3-62
+27-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:23:20-60
 28    <uses-permission android:name="android.permission.INTERNET" />
-28-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:24:3-64
-28-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:24:20-62
+28-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:24:3-64
+28-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:24:20-62
 29    <uses-permission android:name="android.permission.VIBRATE" />
-29-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:25:3-63
-29-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:25:20-61
+29-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:25:3-63
+29-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:25:20-61
 30    <uses-permission android:name="android.permission.FLASHLIGHT" />
-30-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:26:3-66
-30-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:26:20-64
+30-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:26:3-66
+30-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:26:20-64
 31    <uses-permission android:name="android.permission.READ_CONTACTS" />
-31-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:27:3-69
-31-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:27:20-67
+31-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:27:3-69
+31-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:27:20-67
 32    <!-- unavailable in API 23 -->
 33    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
-33-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:29:3-90
-33-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:29:20-88
+33-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:29:3-90
+33-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:29:20-88
 34    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-34-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:30:3-78
-34-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:30:20-76
+34-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:30:3-78
+34-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:30:20-76
 35    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-35-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:31:3-73
-35-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:31:20-71
+35-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:31:3-73
+35-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:31:20-71
 36    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-36-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:32:3-73
-36-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:32:20-71
+36-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:32:3-73
+36-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:32:20-71
 37
 38    <uses-feature android:name="android.hardware.camera.any" />
-38-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:34:5-63
-38-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:34:19-61
+38-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:34:5-63
+38-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:34:19-61
 39    <uses-feature
-39-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:35:3-92
+39-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:35:3-92
 40        android:name="android.hardware.camera.autofocus"
-40-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:35:17-65
+40-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:35:17-65
 41        android:required="false" />
-41-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:35:66-90
+41-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:35:66-90
 42    <uses-feature
-42-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:36:3-88
+42-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:36:3-88
 43        android:name="android.hardware.camera.flash"
-43-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:36:17-61
+43-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:36:17-61
 44        android:required="false" />
-44-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:36:62-86
+44-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:36:62-86
 45    <uses-feature android:name="android.hardware.screen.landscape" />
-45-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:37:3-67
-45-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:37:17-65
+45-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:37:3-67
+45-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:37:17-65
 46    <uses-feature
-46-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:38:3-80
+46-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:38:3-80
 47        android:name="android.hardware.wifi"
-47-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:38:17-53
+47-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:38:17-53
 48        android:required="false" />
-48-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:38:54-78
+48-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:38:54-78
 49
 50    <application
-50-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:40:3-139:17
+50-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:40:3-139:17
 51        android:allowBackup="true"
-51-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:43:16-42
+51-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:43:16-42
 52        android:debuggable="true"
 53        android:label="@string/app_name" >
-53-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:42:16-48
+53-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:42:16-48
 54        <activity
-54-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:44:5-86:16
+54-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:44:5-86:16
 55            android:name="com.google.zxing.client.android.CaptureActivity"
-55-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:44:15-46
+55-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:44:15-46
 56            android:clearTaskOnLaunch="true"
-56-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:46:15-47
+56-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:46:15-47
 57            android:screenOrientation="sensorLandscape"
-57-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:45:15-58
+57-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:45:15-58
 58            android:stateNotNeeded="true"
-58-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:47:15-44
+58-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:47:15-44
 59            android:theme="@style/CaptureTheme"
-59-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:48:15-50
+59-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:48:15-50
 60            android:windowSoftInputMode="stateAlwaysHidden" >
-60-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:49:15-62
+60-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:49:15-62
 61            <intent-filter>
-61-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:50:7-53:23
+61-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:50:7-53:23
 62                <action android:name="android.intent.action.MAIN" />
-62-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:51:9-60
-62-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:51:17-58
+62-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:51:9-60
+62-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:51:17-58
 63            </intent-filter>
 64            <intent-filter>
-64-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:54:7-57:23
+64-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:54:7-57:23
 65                <action android:name="com.google.zxing.client.android.SCAN" />
-65-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:55:9-70
-65-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:55:17-68
+65-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:55:9-70
+65-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:55:17-68
 66
 67                <category android:name="android.intent.category.DEFAULT" />
-67-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
-67-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
+67-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
+67-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
 68            </intent-filter>
 69            <!-- Allow web apps to launch Barcode Scanner by linking to http://zxing.appspot.com/scan. -->
 70            <intent-filter>
-70-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:59:7-64:23
+70-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:59:7-64:23
 71                <action android:name="android.intent.action.VIEW" />
-71-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:60:9-60
-71-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:60:17-58
+71-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:60:9-60
+71-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:60:17-58
 72
 73                <category android:name="android.intent.category.DEFAULT" />
-73-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
-73-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
+73-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
+73-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
 74                <category android:name="android.intent.category.BROWSABLE" />
-74-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:62:9-69
-74-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:62:19-67
+74-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:62:9-69
+74-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:62:19-67
 75
 76                <data
-76-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:9-92
+76-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:9-92
 77                    android:host="zxing.appspot.com"
-77-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:37-69
+77-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:37-69
 78                    android:path="/scan"
-78-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:70-90
+78-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:70-90
 79                    android:scheme="http" />
-79-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:15-36
+79-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:15-36
 80            </intent-filter>
 81            <!-- We also support a Google Product Search URL. -->
 82            <intent-filter>
-82-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:66:7-71:23
+82-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:66:7-71:23
 83                <action android:name="android.intent.action.VIEW" />
-83-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:60:9-60
-83-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:60:17-58
+83-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:60:9-60
+83-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:60:17-58
 84
 85                <category android:name="android.intent.category.DEFAULT" />
-85-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
-85-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
+85-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
+85-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
 86                <category android:name="android.intent.category.BROWSABLE" />
-86-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:62:9-69
-86-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:62:19-67
+86-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:62:9-69
+86-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:62:19-67
 87
 88                <data
-88-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:9-92
+88-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:9-92
 89                    android:host="www.google.com"
-89-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:37-69
+89-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:37-69
 90                    android:path="/m/products/scan"
-90-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:70-90
+90-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:70-90
 91                    android:scheme="http" />
-91-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:15-36
+91-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:15-36
 92            </intent-filter>
 93            <!-- And the UK version. -->
 94            <intent-filter>
-94-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:73:7-78:23
+94-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:73:7-78:23
 95                <action android:name="android.intent.action.VIEW" />
-95-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:60:9-60
-95-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:60:17-58
+95-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:60:9-60
+95-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:60:17-58
 96
 97                <category android:name="android.intent.category.DEFAULT" />
-97-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
-97-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
+97-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
+97-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
 98                <category android:name="android.intent.category.BROWSABLE" />
-98-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:62:9-69
-98-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:62:19-67
+98-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:62:9-69
+98-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:62:19-67
 99
 100                <data
-100-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:9-92
+100-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:9-92
 101                    android:host="www.google.co.uk"
-101-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:37-69
+101-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:37-69
 102                    android:path="/m/products/scan"
-102-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:70-90
+102-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:70-90
 103                    android:scheme="http" />
-103-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:15-36
+103-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:15-36
 104            </intent-filter>
 105            <!-- Support zxing://scan/?... like iPhone app -->
 106            <intent-filter>
-106-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:80:7-85:23
+106-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:80:7-85:23
 107                <action android:name="android.intent.action.VIEW" />
-107-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:60:9-60
-107-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:60:17-58
+107-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:60:9-60
+107-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:60:17-58
 108
 109                <category android:name="android.intent.category.DEFAULT" />
-109-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
-109-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
+109-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
+109-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
 110                <category android:name="android.intent.category.BROWSABLE" />
-110-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:62:9-69
-110-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:62:19-67
+110-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:62:9-69
+110-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:62:19-67
 111
 112                <data
-112-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:9-92
+112-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:9-92
 113                    android:host="scan"
-113-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:37-69
+113-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:37-69
 114                    android:path="/"
-114-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:70-90
+114-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:70-90
 115                    android:scheme="zxing" />
-115-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:15-36
+115-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:15-36
 116            </intent-filter>
 117        </activity>
 118        <activity
-118-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:87:5-89:46
+118-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:87:5-89:46
 119            android:name="com.google.zxing.client.android.PreferencesActivity"
-119-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:87:15-50
+119-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:87:15-50
 120            android:label="@string/preferences_name"
-120-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:88:15-55
+120-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:88:15-55
 121            android:stateNotNeeded="true" />
-121-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:89:15-44
+121-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:89:15-44
 122        <activity
-122-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:90:5-108:16
+122-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:90:5-108:16
 123            android:name="com.google.zxing.client.android.encode.EncodeActivity"
-123-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:90:15-52
+123-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:90:15-52
 124            android:stateNotNeeded="true" >
-124-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:91:15-44
+124-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:91:15-44
 125            <intent-filter>
-125-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:92:7-95:23
+125-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:92:7-95:23
 126                <action android:name="com.google.zxing.client.android.ENCODE" />
-126-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:93:9-72
-126-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:93:17-70
+126-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:93:9-72
+126-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:93:17-70
 127
 128                <category android:name="android.intent.category.DEFAULT" />
-128-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
-128-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
+128-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
+128-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
 129            </intent-filter>
 130            <!-- This allows us to handle the Share button in Contacts. -->
 131            <intent-filter>
-131-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:97:7-101:23
+131-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:97:7-101:23
 132                <action android:name="android.intent.action.SEND" />
-132-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:98:9-60
-132-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:98:17-58
+132-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:98:9-60
+132-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:98:17-58
 133
 134                <category android:name="android.intent.category.DEFAULT" />
-134-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
-134-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
+134-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
+134-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
 135
 136                <data android:mimeType="text/x-vcard" />
-136-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:9-92
-136-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:100:15-46
+136-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:9-92
+136-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:100:15-46
 137            </intent-filter>
 138            <!-- This allows us to handle sharing any plain text . -->
 139            <intent-filter>
-139-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:103:7-107:23
+139-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:103:7-107:23
 140                <action android:name="android.intent.action.SEND" />
-140-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:98:9-60
-140-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:98:17-58
+140-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:98:9-60
+140-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:98:17-58
 141
 142                <category android:name="android.intent.category.DEFAULT" />
-142-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
-142-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
+142-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
+142-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
 143
 144                <data android:mimeType="text/plain" />
-144-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:63:9-92
-144-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:100:15-46
+144-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:63:9-92
+144-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:100:15-46
 145            </intent-filter>
 146        </activity>
 147        <activity
-147-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:109:5-117:16
+147-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:109:5-117:16
 148            android:name="com.google.zxing.client.android.book.SearchBookContentsActivity"
-148-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:109:15-62
+148-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:109:15-62
 149            android:label="@string/sbc_name"
-149-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:110:15-47
+149-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:110:15-47
 150            android:screenOrientation="sensorLandscape"
-150-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:112:15-58
+150-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:112:15-58
 151            android:stateNotNeeded="true" >
-151-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:111:15-44
+151-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:111:15-44
 152            <intent-filter>
-152-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:113:7-116:23
+152-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:113:7-116:23
 153                <action android:name="com.google.zxing.client.android.SEARCH_BOOK_CONTENTS" />
-153-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:114:9-86
-153-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:114:17-84
+153-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:114:9-86
+153-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:114:17-84
 154
 155                <category android:name="android.intent.category.DEFAULT" />
-155-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
-155-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
+155-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
+155-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
 156            </intent-filter>
 157        </activity>
 158        <activity
-158-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:118:5-125:16
+158-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:118:5-125:16
 159            android:name="com.google.zxing.client.android.share.ShareActivity"
-159-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:118:15-50
+159-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:118:15-50
 160            android:screenOrientation="user"
-160-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:120:15-47
+160-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:120:15-47
 161            android:stateNotNeeded="true" >
-161-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:119:15-44
+161-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:119:15-44
 162            <intent-filter>
-162-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:121:7-124:23
+162-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:121:7-124:23
 163                <action android:name="com.google.zxing.client.android.SHARE" />
-163-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:122:9-71
-163-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:122:17-69
+163-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:122:9-71
+163-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:122:17-69
 164
 165                <category android:name="android.intent.category.DEFAULT" />
-165-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
-165-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
+165-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:9-67
+165-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:56:19-65
 166            </intent-filter>
 167        </activity>
 168        <activity
-168-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:126:5-128:46
+168-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:126:5-128:46
 169            android:name="com.google.zxing.client.android.history.HistoryActivity"
-169-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:126:15-54
+169-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:126:15-54
 170            android:label="@string/history_title"
-170-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:127:15-52
+170-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:127:15-52
 171            android:stateNotNeeded="true" />
-171-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:128:15-44
+171-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:128:15-44
 172        <activity
-172-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:129:5-131:46
+172-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:129:5-131:46
 173            android:name="com.google.zxing.client.android.share.BookmarkPickerActivity"
-173-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:129:15-59
+173-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:129:15-59
 174            android:label="@string/bookmark_picker_name"
-174-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:130:15-59
+174-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:130:15-59
 175            android:stateNotNeeded="true" />
-175-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:131:15-44
+175-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:131:15-44
 176        <activity
-176-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:132:5-134:46
+176-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:132:5-134:46
 177            android:name="com.google.zxing.client.android.share.AppPickerActivity"
-177-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:132:15-54
+177-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:132:15-54
 178            android:label="@string/app_picker_name"
-178-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:133:15-54
+178-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:133:15-54
 179            android:stateNotNeeded="true" />
-179-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:134:15-44
+179-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:134:15-44
 180        <activity
-180-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:135:5-138:46
+180-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:135:5-138:46
 181            android:name="com.google.zxing.client.android.HelpActivity"
-181-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:135:15-43
+181-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:135:15-43
 182            android:label="@string/menu_help"
-182-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:136:15-48
+182-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:136:15-48
 183            android:screenOrientation="user"
-183-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:137:15-47
+183-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:137:15-47
 184            android:stateNotNeeded="true" />
-184-->C:\Users\Tan Pe Hui Adrian\Desktop\FYPPrototype\android\src\main\AndroidManifest.xml:138:15-44
+184-->D:\git\FYP\FYP\FYPPrototype\android\src\main\AndroidManifest.xml:138:15-44
 185    </application>
 186
 187</manifest>

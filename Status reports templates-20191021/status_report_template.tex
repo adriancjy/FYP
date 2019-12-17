@@ -47,13 +47,15 @@ Below are the progress made so far.
 
 One of the problems I have faced initially is the complex mathematics equations involved in deriving a user's current position within an indoor environment using the smartphone's embedded sensors such as accelerometer, gyroscope and magnetometer. All these sensors have their own parts to play in calculating as accurate as possible the position of the user.\\
 
-Another problem that I have faced is also that the sensors within the smartphone suffers from drift errors after sometime. This will require certain mitigations in order to preserve the accuracy of the user's position which can be done so with the QR Code. In order to determine the drift error and perform the mitigation, I plan to carry out experiments to see the effects of the drift in the sensor values to determine the most appropriate distance between each repositioning QR code to make it more efficient.
+Another problem that I have faced is also that the sensors within the smartphone suffers from drift errors after sometime. This will require certain mitigations in order to preserve the accuracy of the user's position which can be done so with the QR Code. In order to determine the drift error and perform the mitigation, I plan to carry out experiments to see the effects of the drift in the sensor values to determine the most appropriate distance between each repositioning QR code to make it more efficient.\\
+
+Another problem that I have encountered is that by using the STEP_DETECTOR sensor in the smartphone, because of the initial calibration to verify that the user is actually performing walking movements, there is a slight delay in the Sensor's onChanged event to track the step detection.
 
 \subsubsection{Risks}\label{risks}
 
-One risk that I have identified is the accuracy of the estimation of positioning due to the IMU sensor data. As every phone has different embedded sensors, the data from each sensors may vary very differently. And because the sensors are very sensitive, the change in the data may vary as well. This will lead to inconsistent results in the appication.\\
+One risk that I have identified is the accuracy of the estimation of positioning as the sensors embedded within the smartphone may be unreliable. As every phone has different embedded sensors, the data from each sensors may vary very differently. And because the sensors are very sensitive, the change in the data may vary as well. This will lead to inconsistent results in the appication.\\
  
-To test out this risk, a way is to deploy the application on multiple different devices and to test out the accuracy of each model and document it. For the varying data, it is best to conduct an experiment, collecting multiple data from various smartphone and performing the same set of actions to each smartphone such as - rotation to left or right etc.
+To mitigate this risk, a way is to deploy the application on multiple different devices and to test out the accuracy of each model and document it. For the varying data, it is best to conduct an experiment, collecting multiple data from various smartphone and performing the same set of actions to each smartphone such as - rotation to left or right etc.
 
 \subsection{Plan}\label{plan}
 

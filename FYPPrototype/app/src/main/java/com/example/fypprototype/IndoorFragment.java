@@ -30,6 +30,8 @@ import androidx.fragment.app.Fragment;
 
 import com.google.zxing.Result;
 
+import org.w3c.dom.Text;
+
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 import static android.content.Context.SENSOR_SERVICE;
@@ -41,12 +43,8 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     float[] mGravity;
     float[] mGeomagnetic;
     private SensorManager mSensorManager;
-    private Sensor stepDetector;
     private Sensor accelerometer;
     private Sensor magnetometer;
-    private TextView TextView_count;
-    private TextView TextView_azimuth;
-    private Button button;
     float azimuth;
     private int steps;
     float startX = 0;
@@ -58,6 +56,25 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     private ImageView emptyView;
     float strideLength = 0.0f;
     String level = "";
+
+
+    //step detection
+    double lastAccelZValue = -9999;
+    long lastCheckTime = 0; boolean highLineState = true;
+    boolean lowLineState = true;
+    boolean passageState = false; double highLine = 1;
+    double highBoundaryLine = 0;
+    double highBoundaryLineAlpha = 1.0; double highLineMin = 0.50;
+    double highLineMax = 1.5;
+    double highLineAlpha = 0.0005; double lowLine = -1;
+    double lowBoundaryLine = 0;
+    double lowBoundaryLineAlpha = -1.0; double lowLineMax = -0.50;
+    double lowLineMin = -1.5;
+    double lowLineAlpha = 0.0005; double lowPassFilterAlpha = 0.9;  float[] rotationData = new float[9];
+    float[] resultData = new float[3];
+
+    protected float[] accelLinearData;
+
 
 
 
@@ -147,8 +164,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         });
 
         mSensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
-        stepDetector = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR); // problème
-        accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
         magnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
         steps=0;
@@ -203,7 +219,6 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     @Override
     public void onResume() {
         super.onResume();
-        mSensorManager.registerListener(this, stepDetector, SensorManager.SENSOR_DELAY_FASTEST);
         mSensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
         mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
         ScannerView.setResultHandler(this);
@@ -212,19 +227,12 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_STEP_DETECTOR)
-        {
-            // if (event.values[0] == 1.0f) {
-            steps++;
-
-            Toast.makeText(getActivity().getApplicationContext(), "Step detected", Toast.LENGTH_LONG).show();
-
-
-            move(azimuth, strideLength);
-            // }
-
+        if (event.sensor.getType() ==  Sensor.TYPE_LINEAR_ACCELERATION) {
+            this.accelLinearData = event.values.clone();
+        }  if (this.accelLinearData != null) {
+            readStepDetection(accelLinearData);
         }
-        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER)
+        if (event.sensor.getType() == Sensor.TYPE_LINEAR_ACCELERATION)
             mGravity = event.values;
         if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD)
             mGeomagnetic = event.values;
@@ -269,6 +277,59 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         return true;
     }
 
+
+    private void readStepDetection(float[] accelLinearData) {  long currentTime = System.currentTimeMillis();
+        long gapTime1 = (currentTime - lastCheckTime);  if (lastAccelZValue == -9999){
+            lastAccelZValue = accelLinearData[2];
+        }  if (highLineState && highLine > highLineMin) {
+            highLine = highLine - highLineAlpha;
+            highBoundaryLine = highLine * highBoundaryLineAlpha;
+        }  if (lowLineState && lowLine < lowLineMax) {
+            lowLine = lowLine + lowLineAlpha;
+            lowBoundaryLine = lowLine * lowBoundaryLineAlpha;
+        }//perform a low pass filter for sensor reading
+        double zValue = (lowPassFilterAlpha * lastAccelZValue) + (1 -lowPassFilterAlpha) * accelLinearData[2];  if (highLineState && gapTime1 > 100 && zValue > highBoundaryLine){
+            highLineState = false;
+        }  if (lowLineState && zValue < lowBoundaryLine && passageState) {
+            lowLineState = false;
+        }  if (!highLineState) {
+            if (zValue > highLine) {
+                highLine = zValue;
+                highBoundaryLine = highLine * highBoundaryLineAlpha;
+
+                if (highLine > highLineMax) {
+                    highLine = highLineMax;
+                    highBoundaryLine = highLine * highBoundaryLineAlpha;
+                }
+            } else {
+                if (highBoundaryLine > zValue) {
+                    highLineState = true;
+                    passageState = true;
+                }
+            }
+        }  if (!lowLineState && passageState) {
+            if (zValue < lowLine) {
+                lowLine = zValue;
+                lowBoundaryLine = lowLine * lowBoundaryLineAlpha;
+
+                if (lowLine < lowLineMin) {
+                    lowLine = lowLineMin;
+                    lowBoundaryLine = lowLine * lowBoundaryLineAlpha;
+                }
+            } else {
+                if (lowBoundaryLine < zValue) {
+                    lowLineState = true;
+                    passageState = false;
+                    steps++;
+                    move(azimuth, strideLength);
+                    //Toast.makeText(getActivity().getApplicationContext(), "Step detected " + steps, Toast.LENGTH_LONG).show();
+                    lastCheckTime = currentTime;
+                }
+            }
+        }
+
+        lastAccelZValue = zValue;
+    }
 
 
 }
