@@ -178,3 +178,11 @@
 * *1 hour* Experiment with the application
 * *2 hours* Fix errors on the code as well as redraw level 3 and 4 indoor plan.
 * *2 hour* Edit final dissertation
+
+
+## Week 14
+
+### 23 Dec 2019
+
+* *2 hours* Conducting additional experiments
+* *4 hours* Updating final dissertation

@@ -26,7 +26,7 @@ Another approach to Indoor Positioning System (IPS) is the use of smartphone emb
 
 \subsubsection{Aims}\label{aims}
 
-The aim of this project is to integrate the use of smartphone embedded IMU sensors data from accelerometer, gyroscope and magnetometer to estimate the current position of a user within indoor environments without the use of GPS signals and in order to counter the drift error, Quick Response (QR) code is introduced to handle it.\\
+The aim of this project is to integrate the use of smartphone embedded sensors data from accelerometer, gyroscope and magnetometer to estimate the current position of a user within indoor environments without the use of GPS signals and in order to counter the drift error, Quick Response (QR) code is introduced to handle it.\\
 
 QR Code will be encoded with the coordinates within the position it is at in the indoor environment, using the smartphone camera to detect the QR Code and then recalibrating the position of the individual in the indoor environment using the coordinates encoded within the QR Code.
 \subsection{Progress}\label{progress}
@@ -38,7 +38,7 @@ Below are the progress made so far.
   \item Encoded QR codes with values that indicates which level the user is at and the starting coordinates.
   \item One QR code is also created to simulate the repositioning of the user's path as the sensor may causes a drift in the path.
   \item Able to track user position by using the accelerometer and magnetometer values to calculate azimuth to determine the orientation; the direction that the user is walking.
-  \item User is also able to key in a stride length value as well as change the indoor map reflected as they change levels by navigating to the settings page to re-scan the inital level's QR Code.
+  \item User is also able to key in their height to do the stride length estimation as well as change the indoor map reflected as they change levels by navigating to the settings page to re-scan the inital level's QR Code.
 \end{itemize}
 
 \subsection{Problems and risks}\label{problems-and-risks}
@@ -49,13 +49,11 @@ One of the problems I have faced initially is the complex mathematics equations 
 
 Another problem that I have faced is also that the sensors within the smartphone suffers from drift errors after sometime. This will require certain mitigations in order to preserve the accuracy of the user's position which can be done so with the QR Code. In order to determine the drift error and perform the mitigation, I plan to carry out experiments to see the effects of the drift in the sensor values to determine the most appropriate distance between each repositioning QR code to make it more efficient.\\
 
-Another problem that I have encountered is that by using the STEP_DETECTOR sensor in the smartphone, because of the initial calibration to verify that the user is actually performing walking movements, there is a slight delay in the Sensor's onChanged event to track the step detection.
-
 \subsubsection{Risks}\label{risks}
 
 One risk that I have identified is the accuracy of the estimation of positioning as the sensors embedded within the smartphone may be unreliable. As every phone has different embedded sensors, the data from each sensors may vary very differently. And because the sensors are very sensitive, the change in the data may vary as well. This will lead to inconsistent results in the appication.\\
  
-To mitigate this risk, a way is to deploy the application on multiple different devices and to test out the accuracy of each model and document it. For the varying data, it is best to conduct an experiment, collecting multiple data from various smartphone and performing the same set of actions to each smartphone such as - rotation to left or right etc.
+To mitigate this risk, a way is to deploy the application on multiple different devices and to test out the accuracy of each model and document it. For the varying data, it is best to conduct an experiment by running the application on various devices of different models of smartphone to determine the effect of the varying sensors in the differnet smartphones.
 
 \subsection{Plan}\label{plan}
 

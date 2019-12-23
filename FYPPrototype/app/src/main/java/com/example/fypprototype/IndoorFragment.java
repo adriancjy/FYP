@@ -323,8 +323,9 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
                     lowLineState = true;
                     passageState = false;
                     steps++;
-                    move(azimuth, strideLength);
-                    //Toast.makeText(getActivity().getApplicationContext(), "Step detected " + steps, Toast.LENGTH_LONG).show();
+                    if(steps%2 == 0){
+                        move(azimuth, strideLength);
+                    }
                     lastCheckTime = currentTime;
                 }
             }
