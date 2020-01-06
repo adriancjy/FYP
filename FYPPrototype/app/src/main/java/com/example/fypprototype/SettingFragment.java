@@ -67,7 +67,8 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
                     Toast.makeText(getActivity().getApplicationContext(), "Please fill in your height", Toast.LENGTH_LONG).show();
                 }else{
                     if(args.containsKey("startX") && args.containsKey("startY")){
-                        content = ((Float.valueOf(height.getText().toString()) * strideCalculate)/2.54f)+5;
+                        //get the best estimate
+                        content = ((Float.valueOf(height.getText().toString()) * strideCalculate)/2.54f);
                         args.putFloat("strideLength", content);
                         BottomNavigationView bottomNav = getActivity().findViewById(R.id.bottomNavgiation);
                         bottomNav.setSelectedItemId(R.id.nav_home);

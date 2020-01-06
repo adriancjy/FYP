@@ -64,12 +64,12 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     boolean lowLineState = true;
     boolean passageState = false; double highLine = 1;
     double highBoundaryLine = 0;
-    double highBoundaryLineAlpha = 1.0; double highLineMin = 0.50;
-    double highLineMax = 1.5;
+    double highBoundaryLineAlpha = 0.90; double highLineMin = 0.40;
+    double highLineMax = 1.40;
     double highLineAlpha = 0.0005; double lowLine = -1;
     double lowBoundaryLine = 0;
-    double lowBoundaryLineAlpha = -1.0; double lowLineMax = -0.50;
-    double lowLineMin = -1.5;
+    double lowBoundaryLineAlpha = -0.90; double lowLineMax = -0.40;
+    double lowLineMin = -1.40;
     double lowLineAlpha = 0.0005; double lowPassFilterAlpha = 0.9;  float[] rotationData = new float[9];
     float[] resultData = new float[3];
 
@@ -95,7 +95,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
 
         ScannerView = new ZXingScannerView(getActivity());
         RelativeLayout rl = (RelativeLayout) v.findViewById(R.id.relative_scan_take_single);
-        Button sensor = (Button) v.findViewById(R.id.sensorBtn);
+        //Button sensor = (Button) v.findViewById(R.id.sensorBtn);
         rl.addView(ScannerView);
         ScannerView.setResultHandler(this);
         ScannerView.startCamera();
@@ -157,11 +157,11 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
 
 
 
-        sensor.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                move(azimuth, strideLength);
-            }
-        });
+//        sensor.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                move(azimuth, strideLength);
+//            }
+//        });
 
         mSensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
         accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);

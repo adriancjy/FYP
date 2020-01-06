@@ -186,3 +186,10 @@
 
 * *2 hours* Conducting additional experiments
 * *4 hours* Updating final dissertation
+* *4 hours* Experimenting with different variations of the stride length
+
+### 27 Dec 2019
+
+* *1 hour* Designing logo and adding into the application manifest.
+* *1 hour* Making UI changes to the application and updating the final dissertation.
+* *3 hours* Research on the magnetometer's limitations.
