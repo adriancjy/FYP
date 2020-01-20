@@ -1,6 +1,7 @@
 package com.example.fypprototype;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -21,9 +23,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.zxing.Result;
+
+import java.util.Map;
+import java.util.Set;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
@@ -33,6 +39,7 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
     public static String qrVal;
     Bundle args = new Bundle();
     float content = 0.0f, strideCalculate = 0.0f;
+
 
 
 
@@ -71,7 +78,8 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
                         content = ((Float.valueOf(height.getText().toString()) * strideCalculate)/2.54f);
                         args.putFloat("strideLength", content);
                         BottomNavigationView bottomNav = getActivity().findViewById(R.id.bottomNavgiation);
-                        bottomNav.setSelectedItemId(R.id.nav_home);
+                        bottomNav.getMenu().findItem(R.id.nav_home).setChecked(true);
+                        //bottomNav.setSelectedItemId(R.id.nav_home);
                         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                         IndoorFragment fragment = new IndoorFragment();
@@ -175,6 +183,7 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
         ScannerView.setResultHandler(this);
         ScannerView.startCamera();
     }
+
 
 
 }

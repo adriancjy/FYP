@@ -20,15 +20,9 @@
             android:value="AIzaSyBVN-spmsr_5wpJLsAa5m24S9z0Psto_ng"/>
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 
-        <service
-            android:name=".SensorService"
-            android:enabled="true"
-            android:exported="true"></service>
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

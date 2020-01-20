@@ -3,22 +3,18 @@ package com.example.fypprototype;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -74,22 +70,31 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     float[] resultData = new float[3];
 
     protected float[] accelLinearData;
-
+    TextView stepCount;
 
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         View v = inflater.inflate(R.layout.fragment_indoor, container, false);
+        Bundle bundle = getArguments();
 
-        Bundle bundle = this.getArguments();
+
+
         if(bundle != null){
             strideLength = bundle.getFloat("strideLength", strideLength);
             startX = bundle.getFloat("startX", startX);
             startY = bundle.getFloat("startY", startY);
             level = bundle.getString("level");
-        }else{
+        }else if(savedInstanceState != null){
+            strideLength = savedInstanceState.getFloat("strideLength", strideLength);
+            startX = savedInstanceState.getFloat("xVal", startX);
+            startY = savedInstanceState.getFloat("yVal", startY);
+            level = savedInstanceState.getString("levelVal");
+        }
+        else{
             System.err.println("null");
         }
 
@@ -155,13 +160,6 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
 
         });
 
-
-
-//        sensor.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                move(azimuth, strideLength);
-//            }
-//        });
 
         mSensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
         accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
@@ -231,7 +229,8 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() ==  Sensor.TYPE_LINEAR_ACCELERATION) {
             this.accelLinearData = event.values.clone();
-        }  if (this.accelLinearData != null) {
+        }
+        if (this.accelLinearData != null) {
             readStepDetection(accelLinearData);
         }
         if (event.sensor.getType() == Sensor.TYPE_LINEAR_ACCELERATION)
@@ -322,10 +321,15 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
                 if (lowBoundaryLine < zValue) {
                     lowLineState = true;
                     passageState = false;
-                    steps++;
+                    stepCount = (TextView) getActivity().findViewById(R.id.stepCount);
+                    stepCount.setText(String.valueOf(steps));
                     if(steps%2 == 0){
                         move(azimuth, strideLength);
                     }
+                    if(steps == 0 || steps == 20 || steps == 40 || steps == 60 || steps == 80 || steps == 100){
+                        Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + startX + " value of y: " + startY, Toast.LENGTH_LONG).show();
+                    }
+                    steps++;
                     lastCheckTime = currentTime;
                 }
             }
@@ -335,4 +339,21 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     }
 
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putFloat("xVal", startX);
+        savedInstanceState.putFloat("yVal", startY);
+        savedInstanceState.putFloat("strideLength", strideLength);
+        savedInstanceState.putString("levelVal", level);
+        super.onSaveInstanceState(savedInstanceState);
+
+    }
+
+
+
+
 }
+
+
+
+

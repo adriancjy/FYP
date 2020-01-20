@@ -193,3 +193,43 @@
 * *1 hour* Designing logo and adding into the application manifest.
 * *1 hour* Making UI changes to the application and updating the final dissertation.
 * *3 hours* Research on the magnetometer's limitations.
+
+
+## Week 15
+
+### 30 Dec 2019
+
+* *2 hours* Doing experiments.
+* *3 hours* Updating dissertation.
+
+
+## Week 16
+
+### 9 Jan 2020
+
+* *2 hours* Editing the dissertation.
+
+
+## Week 17
+
+### 14 Jan 2020
+
+* *3 hours* Editing the dissertation
+
+### 16 Jan 2020
+
+* *3 hours* Editing the dissertation
+* *2 hours* Fixing a minor issue on the code
+
+### 17 Jan 2020
+
+* *2 hours* Fixing minor issue on the code
+* *2 hours* Meeting with supervisor
+
+
+
+## Week 18
+
+### 20 Jan 2020
+
+* ** Making changes on the code to perform accumulating error analysis
