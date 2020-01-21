@@ -20,7 +20,8 @@
             android:value="AIzaSyBVN-spmsr_5wpJLsAa5m24S9z0Psto_ng"/>
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
