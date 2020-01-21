@@ -37,6 +37,7 @@
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
         android:ems="10"
+        android:hint="Enter your height in cm"
         android:inputType="phone" />
 
     <Button

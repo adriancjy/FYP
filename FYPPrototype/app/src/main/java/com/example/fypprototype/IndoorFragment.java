@@ -326,10 +326,10 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
                     if(steps%2 == 0){
                         move(azimuth, strideLength);
                     }
-                    if(steps%10 == 0){
-//                        Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + startX + " value of y: " + startY, Toast.LENGTH_LONG).show();
-                        Toast.makeText(getActivity().getApplicationContext(), "stop", Toast.LENGTH_LONG).show();
-                    }
+//                    if(steps%10 == 0){
+////                        Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + startX + " value of y: " + startY, Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getActivity().getApplicationContext(), "stop", Toast.LENGTH_LONG).show();
+//                    }
                     steps++;
                     lastCheckTime = currentTime;
                 }

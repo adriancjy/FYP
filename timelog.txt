@@ -234,3 +234,8 @@
 
 * *4 hours* Making changes on the code to perform accumulating error analysis
 * *2 hour* Conducting experiment to calculate accumuluating drift error and comparison of stationary accelerometer vs continuous walking
+
+### 21 Jan 2020
+
+* *3 hours* Adding in additional information on dissertation
+* *1 hour* Doing experiments to collect the accumulated error
