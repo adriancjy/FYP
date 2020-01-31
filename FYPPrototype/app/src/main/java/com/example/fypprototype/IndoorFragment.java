@@ -115,7 +115,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         //Hiding the relativelayout
         //rl.setVisibility(View.INVISIBLE);
 
-        ImageView floorplanView = (ImageView) v.findViewById(R.id.floorplanView);
+        final ImageView floorplanView = (ImageView) v.findViewById(R.id.floorplanView);
         if(level.equals("")) {
             floorplanView.setImageResource(R.drawable.defaultbg);
         }
@@ -143,7 +143,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
 
             @Override
             public void onGlobalLayout() {
-                bitmap = Bitmap.createBitmap(1080, 1823, Bitmap.Config.ARGB_8888);
+                bitmap = Bitmap.createBitmap(floorplanView.getWidth(), floorplanView.getHeight(), Bitmap.Config.ARGB_8888);
                 canvas = new Canvas(bitmap);
 
             }
@@ -159,9 +159,9 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
                     float yVal = event.getY();
                     Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + xVal + " value of y: " + yVal, Toast.LENGTH_LONG).show();
                     ImageView emptyView = (ImageView) getActivity().findViewById(R.id.emptyView);
-                    float width = emptyView.getWidth();
-                    float height = emptyView.getHeight();
-                    Bitmap bitmap = Bitmap.createBitmap(emptyView.getWidth(), emptyView.getHeight(), Bitmap.Config.ARGB_8888);
+                    float width = floorplanView.getWidth();
+                    float height = floorplanView.getHeight();
+                    Bitmap bitmap = Bitmap.createBitmap(floorplanView.getWidth(), floorplanView.getHeight(), Bitmap.Config.ARGB_8888);
                     Canvas canvas = new Canvas(bitmap);
                     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
                     paint.setColor(Color.BLACK);
