@@ -150,7 +150,7 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
         qrVal = result.getText();
         String[] indiQR = qrVal.split(",");
         if(indiQR.length == 4){
-            if(indiQR[0].equals("Initial")){
+            if(indiQR[0].equals("Initial") || indiQR[0].equals("initial")){
                 args.putFloat("startX", Float.valueOf(indiQR[1]));
                 args.putFloat("startY", Float.valueOf(indiQR[2]));
                 args.putString("level", indiQR[3]);
