@@ -1,5 +1,7 @@
 package com.example.fypprototype;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -74,6 +76,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
 
 
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -88,13 +91,16 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
             startX = bundle.getFloat("startX", startX);
             startY = bundle.getFloat("startY", startY);
             level = bundle.getString("level");
+            setPrefVal(bundle);
         }else if(savedInstanceState != null){
+            getPrefVal();
             strideLength = savedInstanceState.getFloat("strideLength", strideLength);
             startX = savedInstanceState.getFloat("xVal", startX);
             startY = savedInstanceState.getFloat("yVal", startY);
             level = savedInstanceState.getString("levelVal");
         }
         else{
+            getPrefVal();
             System.err.println("null");
         }
 
@@ -108,6 +114,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         ScannerView.setAutoFocus(true);
         //Hiding the relativelayout
         //rl.setVisibility(View.INVISIBLE);
+
         ImageView floorplanView = (ImageView) v.findViewById(R.id.floorplanView);
         if(level.equals("")) {
             floorplanView.setImageResource(R.drawable.defaultbg);
@@ -123,6 +130,13 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         else if(level.equals("4")) {
             getActivity().setTitle("You are at Level " + level);
             floorplanView.setImageResource(R.drawable.fpl4);
+        }else if(level.equals("nypl4")){
+            getActivity().setTitle("You are at Level " + level);
+            floorplanView.setImageResource(R.drawable.nypl4);
+        }
+        else if(level.equals("nypl5")){
+            getActivity().setTitle("You are at Level " + level);
+            floorplanView.setImageResource(R.drawable.nypl5);
         }
         emptyView = (ImageView) v.findViewById(R.id.emptyView);
         emptyView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -340,15 +354,24 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     }
 
 
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putFloat("xVal", startX);
-        savedInstanceState.putFloat("yVal", startY);
-        savedInstanceState.putFloat("strideLength", strideLength);
-        savedInstanceState.putString("levelVal", level);
-        super.onSaveInstanceState(savedInstanceState);
-
+    public void setPrefVal(Bundle bundle){
+        SharedPreferences sp = this.getActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sp.edit();
+        edit.putFloat("strideLength", bundle.getFloat("strideLength"));
+        edit.putFloat("startX", bundle.getFloat("startX"));
+        edit.putFloat("startY", bundle.getFloat("startY"));
+        edit.putString("level", bundle.getString("level"));
+        edit.commit();
     }
+
+    public void getPrefVal(){
+        SharedPreferences sp = this.getActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        startX = sp.getFloat("startX", startX);
+        startY = sp.getFloat("startY", startY);
+        strideLength = sp.getFloat("strideLength", strideLength);
+        level = sp.getString("level", level);
+    }
+
 
 
 
