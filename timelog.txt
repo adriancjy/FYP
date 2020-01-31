@@ -239,3 +239,10 @@
 
 * *3 hours* Adding in additional information on dissertation
 * *1 hour* Doing experiments to collect the accumulated error
+
+
+## Week 19
+
+### 31 Jan 2020
+
+* *4 hours* Making changes to the code to allow for different venues of floorplan and adjusting the layout to be relative to the size of the floorplan
