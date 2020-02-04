@@ -91,7 +91,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
             startX = bundle.getFloat("startX", startX);
             startY = bundle.getFloat("startY", startY);
             level = bundle.getString("level");
-            setPrefVal(bundle);
+            setPrefVal();
         }else if(savedInstanceState != null){
             getPrefVal();
             strideLength = savedInstanceState.getFloat("strideLength", strideLength);
@@ -101,6 +101,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         }
         else{
             getPrefVal();
+            float value = startX;
             System.err.println("null");
         }
 
@@ -285,6 +286,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
             prevY = startY;
             String xVal = Float.toString(x);
             String yVal = Float.toString(y);
+            setPrefVal();
             drawLines(xVal + "," + yVal);
 
 
@@ -354,13 +356,13 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     }
 
 
-    public void setPrefVal(Bundle bundle){
+    public void setPrefVal(){
         SharedPreferences sp = this.getActivity().getSharedPreferences("MyPref", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = sp.edit();
-        edit.putFloat("strideLength", bundle.getFloat("strideLength"));
-        edit.putFloat("startX", bundle.getFloat("startX"));
-        edit.putFloat("startY", bundle.getFloat("startY"));
-        edit.putString("level", bundle.getString("level"));
+        edit.putFloat("strideLength", strideLength);
+        edit.putFloat("startX", startX);
+        edit.putFloat("startY", startY);
+        edit.putString("level", level);
         edit.commit();
     }
 
