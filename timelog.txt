@@ -246,3 +246,21 @@
 ### 31 Jan 2020
 
 * *4 hours* Making changes to the code to allow for different venues of floorplan and adjusting the layout to be relative to the size of the floorplan
+
+
+## Week 20
+
+### 4 Feb 2020
+
+* *1 hour* Edit the images for the dissertation as well as making changes to code
+
+
+## Week 21
+
+### 10 Feb 2020
+
+* *2 hours* Meeting with FYP supervisor
+
+### 11 Feb 2020
+
+* *1 hour* Editing the code

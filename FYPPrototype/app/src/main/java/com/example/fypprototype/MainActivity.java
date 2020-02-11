@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -11,6 +13,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    boolean globalStatus = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +76,5 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
-
 
 }

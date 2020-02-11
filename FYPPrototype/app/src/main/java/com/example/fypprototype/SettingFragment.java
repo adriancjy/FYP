@@ -77,6 +77,8 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
                         //get the best estimate
                         content = ((Float.valueOf(height.getText().toString()) * strideCalculate)/2.54f);
                         args.putFloat("strideLength", content);
+                        MainActivity ma = (MainActivity)getActivity();
+                        ma.globalStatus = true;
                         BottomNavigationView bottomNav = getActivity().findViewById(R.id.bottomNavgiation);
                         bottomNav.getMenu().findItem(R.id.nav_home).setChecked(true);
                         //bottomNav.setSelectedItemId(R.id.nav_home);

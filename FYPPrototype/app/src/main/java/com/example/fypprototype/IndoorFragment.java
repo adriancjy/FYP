@@ -41,8 +41,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     float[] mGravity;
     float[] mGeomagnetic;
     private SensorManager mSensorManager;
-    private Sensor accelerometer;
-    private Sensor magnetometer;
+    private Sensor accelerometer, magnetometer, stepDetect;
     float azimuth;
     private int steps;
     float startX = 0;
@@ -69,7 +68,6 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     double lowBoundaryLineAlpha = -0.90; double lowLineMax = -0.40;
     double lowLineMin = -1.40;
     double lowLineAlpha = 0.0005; double lowPassFilterAlpha = 0.9;  float[] rotationData = new float[9];
-    float[] resultData = new float[3];
 
     protected float[] accelLinearData;
     TextView stepCount;
@@ -83,26 +81,21 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         super.onCreate(savedInstanceState);
         View v = inflater.inflate(R.layout.fragment_indoor, container, false);
         Bundle bundle = getArguments();
+        MainActivity ma = (MainActivity)getActivity();
+        boolean status = ma.globalStatus;
 
+        if(status){
+            if(bundle != null){
 
+                strideLength = bundle.getFloat("strideLength", strideLength);
+                startX = bundle.getFloat("startX", startX);
+                startY = bundle.getFloat("startY", startY);
+                level = bundle.getString("level");
+                setPrefVal();
+            }else{
+                getPrefVal();
 
-        if(bundle != null){
-            strideLength = bundle.getFloat("strideLength", strideLength);
-            startX = bundle.getFloat("startX", startX);
-            startY = bundle.getFloat("startY", startY);
-            level = bundle.getString("level");
-            setPrefVal();
-        }else if(savedInstanceState != null){
-            getPrefVal();
-            strideLength = savedInstanceState.getFloat("strideLength", strideLength);
-            startX = savedInstanceState.getFloat("xVal", startX);
-            startY = savedInstanceState.getFloat("yVal", startY);
-            level = savedInstanceState.getString("levelVal");
-        }
-        else{
-            getPrefVal();
-            float value = startX;
-            System.err.println("null");
+            }
         }
 
         ScannerView = new ZXingScannerView(getActivity());
@@ -179,6 +172,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         mSensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
         accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
         magnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        //stepDetect = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
 
         steps=0;
 
@@ -236,12 +230,19 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         super.onResume();
         mSensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
         mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
+        //mSensorManager.registerListener(this, stepDetect, SensorManager.SENSOR_DELAY_NORMAL);
         ScannerView.setResultHandler(this);
         ScannerView.startCamera();
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+//        if(event.sensor.getType() == Sensor.TYPE_STEP_COUNTER) {
+//            steps++;
+//            if(steps % 2 == 0){
+//                move(azimuth, strideLength);
+//            }
+//        }
         if (event.sensor.getType() ==  Sensor.TYPE_LINEAR_ACCELERATION) {
             this.accelLinearData = event.values.clone();
         }
@@ -373,9 +374,6 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         strideLength = sp.getFloat("strideLength", strideLength);
         level = sp.getString("level", level);
     }
-
-
-
 
 
 }
