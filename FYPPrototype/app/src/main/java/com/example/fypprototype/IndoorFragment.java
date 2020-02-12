@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -21,15 +22,10 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import com.google.zxing.Result;
-
-import org.w3c.dom.Text;
-
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 import static android.content.Context.SENSOR_SERVICE;
@@ -54,7 +50,6 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     float strideLength = 0.0f;
     String level = "";
 
-
     //step detection
     double lastAccelZValue = -9999;
     long lastCheckTime = 0; boolean highLineState = true;
@@ -73,8 +68,6 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     TextView stepCount;
 
 
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -83,6 +76,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         Bundle bundle = getArguments();
         MainActivity ma = (MainActivity)getActivity();
         boolean status = ma.globalStatus;
+
 
         if(status){
             if(bundle != null){
@@ -115,15 +109,16 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         }
         else if(level.equals("2")){
             getActivity().setTitle("You are at Level " + level);
-            floorplanView.setImageResource(R.drawable.fpl2);
+            floorplanView.setImageResource(R.drawable.fpl2new);
         }
         else if(level.equals("3")){
             getActivity().setTitle("You are at Level " + level);
-            floorplanView.setImageResource(R.drawable.fpl3);
+            floorplanView.setImageResource(R.drawable.fpl3new);
         }
         else if(level.equals("4")) {
             getActivity().setTitle("You are at Level " + level);
-            floorplanView.setImageResource(R.drawable.fpl4);
+            floorplanView.setImageResource(R.drawable.fpl4new);
+
         }else if(level.equals("nypl4")){
             getActivity().setTitle("You are at Level " + level);
             floorplanView.setImageResource(R.drawable.nypl4);
@@ -131,7 +126,11 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         else if(level.equals("nypl5")){
             getActivity().setTitle("You are at Level " + level);
             floorplanView.setImageResource(R.drawable.nypl5);
+        }else if(level.equals("blank")){
+            getActivity().setTitle("Blank");
+            floorplanView.setImageResource(R.drawable.blank);
         }
+
         emptyView = (ImageView) v.findViewById(R.id.emptyView);
         emptyView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
 
@@ -338,6 +337,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
                 if (lowBoundaryLine < zValue) {
                     lowLineState = true;
                     passageState = false;
+                    steps++;
                     stepCount = (TextView) getActivity().findViewById(R.id.stepCount);
                     stepCount.setText(String.valueOf(steps));
                     if(steps%2 == 0){
@@ -347,7 +347,6 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
 ////                        Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + startX + " value of y: " + startY, Toast.LENGTH_LONG).show();
 //                        Toast.makeText(getActivity().getApplicationContext(), "stop", Toast.LENGTH_LONG).show();
 //                    }
-                    steps++;
                     lastCheckTime = currentTime;
                 }
             }
