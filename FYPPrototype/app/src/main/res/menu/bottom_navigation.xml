@@ -7,15 +7,15 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Home"/>
 
-    <item
-        android:id="@+id/nav_sensor"
-        android:icon="@drawable/ic_accessibility_black_24dp"
-        android:title="Sensor Reading"/>
+<!--    <item-->
+<!--        android:id="@+id/nav_sensor"-->
+<!--        android:icon="@drawable/ic_accessibility_black_24dp"-->
+<!--        android:title="Sensor Reading"/>-->
 
-    <item
-        android:id="@+id/nav_map"
-        android:icon="@drawable/ic_map_black_24dp"
-        android:title="Map View"/>
+<!--    <item-->
+<!--        android:id="@+id/nav_map"-->
+<!--        android:icon="@drawable/ic_map_black_24dp"-->
+<!--        android:title="Map View"/>-->
     <item
         android:id="@+id/nav_settings"
         android:icon="@drawable/ic_settings_black_24dp"

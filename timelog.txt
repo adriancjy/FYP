@@ -268,5 +268,5 @@
 ### 12 Feb 2020
 
 * *1 hour* Conducting experiments
-* *2 hours* Dissertation
-* *3 hours* Editing the code 
+* *3 hours* Dissertation
+* *4 hours* Editing the code 

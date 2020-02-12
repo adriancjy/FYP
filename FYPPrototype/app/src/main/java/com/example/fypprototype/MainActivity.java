@@ -114,22 +114,22 @@ public class MainActivity extends AppCompatActivity {
                    else{
                        break;
                     }
-                case R.id.nav_sensor:
-                    if(!menuItem.isChecked()) {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new SensorFragment()).commit();
-                        break;
-                    }else{
-                        break;
-                    }
-                case R.id.nav_map:
-                    if(!menuItem.isChecked()) {
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                new MapFragment()).commit();
-                        break;
-                    }else{
-                        break;
-                    }
+//                case R.id.nav_sensor:
+//                    if(!menuItem.isChecked()) {
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                                new SensorFragment()).commit();
+//                        break;
+//                    }else{
+//                        break;
+//                    }
+//                case R.id.nav_map:
+//                    if(!menuItem.isChecked()) {
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                                new MapFragment()).commit();
+//                        break;
+//                    }else{
+//                        break;
+//                    }
                 case R.id.nav_settings:
                     if(!menuItem.isChecked()) {
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
