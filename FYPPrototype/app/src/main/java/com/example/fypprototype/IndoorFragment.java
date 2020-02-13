@@ -153,20 +153,20 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
             @Override
             public boolean onTouch(View v, MotionEvent event){
                 if (event.getAction() == MotionEvent.ACTION_DOWN){
-                    float xVal = event.getX();
-                    float yVal = event.getY();
-                    Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + xVal + " value of y: " + yVal, Toast.LENGTH_LONG).show();
-                    ImageView emptyView = (ImageView) getActivity().findViewById(R.id.emptyView);
-                    float width = floorplanView.getWidth();
-                    float height = floorplanView.getHeight();
-                    Bitmap bitmap = Bitmap.createBitmap(floorplanView.getWidth(), floorplanView.getHeight(), Bitmap.Config.ARGB_8888);
-                    Canvas canvas = new Canvas(bitmap);
-                    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-                    paint.setColor(Color.BLACK);
-                    canvas.drawCircle(xVal, yVal, 10, paint);
-                    emptyView.setImageBitmap(bitmap);
+//                    float xVal = event.getX();
+//                    float yVal = event.getY();
+//                    Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + xVal + " value of y: " + yVal, Toast.LENGTH_LONG).show();
+//                    ImageView emptyView = (ImageView) getActivity().findViewById(R.id.emptyView);
+//                    float width = floorplanView.getWidth();
+//                    float height = floorplanView.getHeight();
+//                    Bitmap bitmap = Bitmap.createBitmap(floorplanView.getWidth(), floorplanView.getHeight(), Bitmap.Config.ARGB_8888);
+//                    Canvas canvas = new Canvas(bitmap);
+//                    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+//                    paint.setColor(Color.BLACK);
+//                    canvas.drawCircle(xVal, yVal, 10, paint);
+//                    emptyView.setImageBitmap(bitmap);
 
-                    //Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + startX + " value of y: " + startY, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + startX + " value of y: " + startY, Toast.LENGTH_LONG).show();
 
                 }
                 return true;
@@ -217,7 +217,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         }
         else if(indiQR.length == 2){
             mPath.moveTo(Float.parseFloat(indiQR [0]), Float.parseFloat(indiQR [1]));
-            mPath.lineTo(prevX, prevY);
+            mPath.lineTo(x, y);
             canvas.drawPath(mPath, paint);
         }else{
             Toast.makeText(getActivity().getApplicationContext(), "Invalid QR Code", Toast.LENGTH_LONG).show();
@@ -289,14 +289,18 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
             // TODO Auto-generated method stub
             double dx=Math.cos((double)dir)*dist;
             double dy=Math.sin((double)dir)*dist;
-            x = startX;
-            y = startY;
-            startX += dx;
-            startY += dy;
             prevX = startX;
             prevY = startY;
-            String xVal = Float.toString(x);
-            String yVal = Float.toString(y);
+            startX += dx;
+            startY += dy;
+            x = startX;
+            y = startY;
+            String xVal = Float.toString(prevX);
+            String yVal = Float.toString(prevY);
+//            if(prevX - x > 200 || x - prevX > 200){
+            if(steps%10 == 0){
+                Toast.makeText(getActivity().getApplicationContext(), "reset", Toast.LENGTH_LONG).show();
+            }
             setPrefVal();
             drawLines(xVal + "," + yVal);
 

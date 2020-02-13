@@ -273,5 +273,6 @@
 
 ### 13 Feb 2020
 
+* *1 hour* Edit code to perform experiment
 * *2 hours* Edit dissertation
-* *2 hours* Conduct experiment 
+* *3 hours* Conduct experiment 
