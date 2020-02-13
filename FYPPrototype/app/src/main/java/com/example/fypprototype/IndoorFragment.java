@@ -56,14 +56,14 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     double lastAccelZValue = -9999;
     long lastCheckTime = 0; boolean highLineState = true;
     boolean lowLineState = true;
-    boolean passageState = false; double highLine = 1;
+    boolean passageState = false; double highLine = 0.75;
     double highBoundaryLine = 0;
-    double highBoundaryLineAlpha = 0.90; double highLineMin = 0.40;
-    double highLineMax = 1.40;
-    double highLineAlpha = 0.0005; double lowLine = -1;
+    double highBoundaryLineAlpha = 0.75; double highLineMin = 0.25;
+    double highLineMax = 1.25;
+    double highLineAlpha = 0.0005; double lowLine = -0.75;
     double lowBoundaryLine = 0;
-    double lowBoundaryLineAlpha = -0.90; double lowLineMax = -0.40;
-    double lowLineMin = -1.40;
+    double lowBoundaryLineAlpha = -0.75; double lowLineMax = -0.25;
+    double lowLineMin = -1.25;
     double lowLineAlpha = 0.0005; double lowPassFilterAlpha = 0.9;  float[] rotationData = new float[9];
 
     protected float[] accelLinearData;
