@@ -9,6 +9,8 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -42,9 +44,8 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     private Sensor accelerometer, magnetometer, stepDetect;
     float azimuth;
     private int steps;
-    float startX = 0;
-    float startY = 0;
-    float prevX, prevY, x, y;
+    float startX, startY = 0;
+    float prevX, prevY, x, y, xDriftCheck;
     final Path mPath = new Path();
     private Canvas canvas;
     private Bitmap bitmap;
@@ -90,6 +91,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
                 startX = bundle.getFloat("startX", startX);
                 startY = bundle.getFloat("startY", startY);
                 level = bundle.getString("level");
+                xDriftCheck = bundle.getFloat("startX");
                 setPrefVal();
             }else{
                 getPrefVal();
@@ -153,24 +155,26 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
             @Override
             public boolean onTouch(View v, MotionEvent event){
                 if (event.getAction() == MotionEvent.ACTION_DOWN){
-//                    float xVal = event.getX();
-//                    float yVal = event.getY();
-//                    Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + xVal + " value of y: " + yVal, Toast.LENGTH_LONG).show();
-//                    ImageView emptyView = (ImageView) getActivity().findViewById(R.id.emptyView);
-//                    float width = floorplanView.getWidth();
-//                    float height = floorplanView.getHeight();
-//                    Bitmap bitmap = Bitmap.createBitmap(floorplanView.getWidth(), floorplanView.getHeight(), Bitmap.Config.ARGB_8888);
-//                    Canvas canvas = new Canvas(bitmap);
-//                    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-//                    paint.setColor(Color.BLACK);
-//                    canvas.drawCircle(xVal, yVal, 10, paint);
-//                    emptyView.setImageBitmap(bitmap);
+                    float xVal = event.getX();
+                    float yVal = event.getY();
+                    Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + xVal + " value of y: " + yVal, Toast.LENGTH_LONG).show();
+                    ImageView emptyView = (ImageView) getActivity().findViewById(R.id.emptyView);
+                    float width = floorplanView.getWidth();
+                    float height = floorplanView.getHeight();
+                    Bitmap bitmap = Bitmap.createBitmap(floorplanView.getWidth(), floorplanView.getHeight(), Bitmap.Config.ARGB_8888);
+                    Canvas canvas = new Canvas(bitmap);
+                    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+                    paint.setColor(Color.BLACK);
+                    canvas.drawCircle(xVal, yVal, 10, paint);
+                    emptyView.setImageBitmap(bitmap);
 
-                    Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + startX + " value of y: " + startY, Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + startX + " value of y: " + startY, Toast.LENGTH_LONG).show();
 
                 }
                 return true;
             }
+
+
 
         });
 
@@ -297,10 +301,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
             y = startY;
             String xVal = Float.toString(prevX);
             String yVal = Float.toString(prevY);
-//            if(prevX - x > 200 || x - prevX > 200){
-            if(steps%10 == 0){
-                Toast.makeText(getActivity().getApplicationContext(), "reset", Toast.LENGTH_LONG).show();
-            }
+            checkDrift();
             setPrefVal();
             drawLines(xVal + "," + yVal);
 
@@ -378,6 +379,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         edit.putFloat("startX", startX);
         edit.putFloat("startY", startY);
         edit.putString("level", level);
+        edit.putFloat("xDrift", xDriftCheck);
         edit.commit();
     }
 
@@ -387,7 +389,16 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         startY = sp.getFloat("startY", startY);
         strideLength = sp.getFloat("strideLength", strideLength);
         level = sp.getString("level", level);
+        xDriftCheck = sp.getFloat("xDrift", xDriftCheck);
     }
+
+    public void checkDrift(){
+        if(x - xDriftCheck > 50 || xDriftCheck - x > 50){
+            Toast.makeText(getActivity().getApplicationContext(), "Stop to allow for accelerometer reset", Toast.LENGTH_LONG).show();
+            xDriftCheck = x;
+        }
+    }
+
 
 
 

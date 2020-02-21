@@ -161,6 +161,9 @@ public class SettingFragment extends Fragment implements ZXingScannerView.Result
                 tvX.setText(indiQR[1]);
                 tvY.setText(indiQR[2]);
                 onPause();
+            }else{
+                Toast.makeText(getActivity().getApplicationContext(), "Wrong QR Code scanned. Please scan the initial QR Code", Toast.LENGTH_LONG).show();
+                onResume();
             }
         }else{
             Toast.makeText(getActivity().getApplicationContext(), "Wrong QR Code scanned. Please scan the initial QR Code", Toast.LENGTH_LONG).show();
