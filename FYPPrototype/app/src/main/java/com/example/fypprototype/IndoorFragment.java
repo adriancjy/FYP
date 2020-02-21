@@ -9,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -27,6 +28,7 @@ import android.hardware.SensorManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import android.os.Vibrator;
 
 
 import com.google.zxing.Result;
@@ -45,7 +47,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     float azimuth;
     private int steps;
     float startX, startY = 0;
-    float prevX, prevY, x, y, xDriftCheck;
+    float prevX, prevY, x, y;
     final Path mPath = new Path();
     private Canvas canvas;
     private Bitmap bitmap;
@@ -69,7 +71,7 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
 
     protected float[] accelLinearData;
     TextView stepCount;
-
+    Handler ha;
 
 
 
@@ -91,7 +93,6 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
                 startX = bundle.getFloat("startX", startX);
                 startY = bundle.getFloat("startY", startY);
                 level = bundle.getString("level");
-                xDriftCheck = bundle.getFloat("startX");
                 setPrefVal();
             }else{
                 getPrefVal();
@@ -187,6 +188,22 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         //stepDetect = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
 
         steps=0;
+
+        ha = new Handler();
+        ha.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                //call function
+                // Get instance of Vibrator from current Context
+                Vibrator v = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
+                // Vibrate for 400 milliseconds
+                v.vibrate(400);
+                Toast.makeText(getActivity().getApplicationContext(), "Stop to allow for accelerometer reset", Toast.LENGTH_LONG).show();
+                ha.postDelayed(this, 10000);
+            }
+        }, 10000);
+
 
         return v;
     }
@@ -301,7 +318,6 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
             y = startY;
             String xVal = Float.toString(prevX);
             String yVal = Float.toString(prevY);
-            checkDrift();
             setPrefVal();
             drawLines(xVal + "," + yVal);
 
@@ -379,7 +395,6 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         edit.putFloat("startX", startX);
         edit.putFloat("startY", startY);
         edit.putString("level", level);
-        edit.putFloat("xDrift", xDriftCheck);
         edit.commit();
     }
 
@@ -389,23 +404,13 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         startY = sp.getFloat("startY", startY);
         strideLength = sp.getFloat("strideLength", strideLength);
         level = sp.getString("level", level);
-        xDriftCheck = sp.getFloat("xDrift", xDriftCheck);
     }
 
-    public void checkDrift(){
-        if(x - xDriftCheck > 50 || xDriftCheck - x > 50){
-            Toast.makeText(getActivity().getApplicationContext(), "Stop to allow for accelerometer reset", Toast.LENGTH_LONG).show();
-            xDriftCheck = x;
-        }
+
     }
 
 
 
-
-
-
-
-}
 
 
 
