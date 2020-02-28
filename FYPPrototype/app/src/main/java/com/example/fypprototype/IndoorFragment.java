@@ -73,6 +73,8 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
     TextView stepCount;
     Handler ha;
 
+    boolean firstTime = false;
+
 
 
 
@@ -157,20 +159,20 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
             @Override
             public boolean onTouch(View v, MotionEvent event){
                 if (event.getAction() == MotionEvent.ACTION_DOWN){
-//                    float xVal = event.getX();
-//                    float yVal = event.getY();
-//                    Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + xVal + " value of y: " + yVal, Toast.LENGTH_LONG).show();
-//                    ImageView emptyView = (ImageView) getActivity().findViewById(R.id.emptyView);
-//                    float width = floorplanView.getWidth();
-//                    float height = floorplanView.getHeight();
-//                    Bitmap bitmap = Bitmap.createBitmap(floorplanView.getWidth(), floorplanView.getHeight(), Bitmap.Config.ARGB_8888);
-//                    Canvas canvas = new Canvas(bitmap);
-//                    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-//                    paint.setColor(Color.BLACK);
-//                    canvas.drawCircle(xVal, yVal, 10, paint);
-//                    emptyView.setImageBitmap(bitmap);
+                    float xVal = event.getX();
+                    float yVal = event.getY();
+                    Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + xVal + " value of y: " + yVal, Toast.LENGTH_LONG).show();
+                    ImageView emptyView = (ImageView) getActivity().findViewById(R.id.emptyView);
+                    float width = floorplanView.getWidth();
+                    float height = floorplanView.getHeight();
+                    Bitmap bitmap = Bitmap.createBitmap(floorplanView.getWidth(), floorplanView.getHeight(), Bitmap.Config.ARGB_8888);
+                    Canvas canvas = new Canvas(bitmap);
+                    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+                    paint.setColor(Color.BLACK);
+                    canvas.drawCircle(xVal, yVal, 10, paint);
+                    emptyView.setImageBitmap(bitmap);
 
-                    Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + startX + " value of y: " + startY, Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + startX + " value of y: " + startY, Toast.LENGTH_LONG).show();
 
                 }
                 return true;
@@ -180,13 +182,9 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
 
         });
 
-
-
-
         mSensorManager = (SensorManager) getActivity().getSystemService(SENSOR_SERVICE);
         accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
         magnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
-        //stepDetect = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
 
         steps=0;
 
@@ -195,13 +193,19 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
 
             @Override
             public void run() {
-                //call function
-                // Get instance of Vibrator from current Context
-//                Vibrator v = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
-//                // Vibrate for 400 milliseconds
-//                v.vibrate(400);
-                Toast.makeText(getActivity(), "Stop to allow for accelerometer reset", Toast.LENGTH_LONG).show();
-                ha.postDelayed(this, 15000);
+                if(!firstTime){
+                    firstTime = true;
+                    prevSteps = steps;
+                    ha.postDelayed(this, 10000);
+                }else{
+                    if(prevSteps != steps){
+                        alertStationary();
+                        prevSteps = steps;
+                        ha.postDelayed(this, 20000);
+                    }else{
+                        ha.postDelayed(this, 10000);
+                    }
+                }
             }
         }, 15000);
 
@@ -269,19 +273,12 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         super.onResume();
         mSensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
         mSensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
-        //mSensorManager.registerListener(this, stepDetect, SensorManager.SENSOR_DELAY_NORMAL);
         ScannerView.setResultHandler(this);
         ScannerView.startCamera();
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-//        if(event.sensor.getType() == Sensor.TYPE_STEP_COUNTER) {
-//            steps++;
-//            if(steps % 2 == 0){
-//                move(azimuth, strideLength);
-//            }
-//        }
         if (event.sensor.getType() ==  Sensor.TYPE_LINEAR_ACCELERATION) {
             this.accelLinearData = event.values.clone();
         }
@@ -300,15 +297,12 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
                 float orientation[] = new float[3];
                 SensorManager.getOrientation(R, orientation);
                 azimuth = orientation[0];
-
-
             }
         }
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
     }
 
     public boolean move(float dir, float dist) {
@@ -328,14 +322,13 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
             String yVal = Float.toString(prevY);
             setPrefVal();
             drawLines(xVal + "," + yVal);
-
-
         }
         return true;
     }
 
 
-    private void readStepDetection(float[] accelLinearData) {  long currentTime = System.currentTimeMillis();
+    private void readStepDetection(float[] accelLinearData) {
+        long currentTime = System.currentTimeMillis();
         long gapTime1 = (currentTime - lastCheckTime);  if (lastAccelZValue == -9999){
             lastAccelZValue = accelLinearData[2];
         }  if (highLineState && highLine > highLineMin) {
@@ -377,17 +370,12 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
                 if (lowBoundaryLine < zValue) {
                     lowLineState = true;
                     passageState = false;
-                    prevSteps = steps;
                     steps++;
                     stepCount = (TextView) getActivity().findViewById(R.id.stepCount);
                     stepCount.setText(String.valueOf(steps));
                     if(steps%2 == 0){
                         move(azimuth, strideLength);
                     }
-//                    if(steps%10 == 0){
-////                        Toast.makeText(getActivity().getApplicationContext(), "Value of x: " + startX + " value of y: " + startY, Toast.LENGTH_LONG).show();
-//                        Toast.makeText(getActivity().getApplicationContext(), "stop", Toast.LENGTH_LONG).show();
-//                    }
                     lastCheckTime = currentTime;
                 }
             }
@@ -413,6 +401,10 @@ public class IndoorFragment extends Fragment implements ZXingScannerView.ResultH
         startY = sp.getFloat("startY", startY);
         strideLength = sp.getFloat("strideLength", strideLength);
         level = sp.getString("level", level);
+    }
+
+    public void alertStationary(){
+            Toast.makeText(getActivity(), "Stop for 5 seconds to allow for accelerometer reset", Toast.LENGTH_LONG).show();
     }
 
 
