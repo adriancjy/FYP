@@ -327,3 +327,11 @@
 * *1 hour 30 minutes* Gathering data for EMI and editing the dissertation 
 * *30 minutes* Editing the application code for the timer.
 
+
+## Week 24
+
+### 2 Mar 2020
+
+* *4 hours* Gathering results from experiments and edit the dissertation
+
+
